@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -14,16 +15,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zsievers/MongoScraper/issues"
-  },
-  "homepage": "https://github.com/zsievers/MongoScraper#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "mongoose": "^5.9.18",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "request": "^2.88.2"
   }
 }

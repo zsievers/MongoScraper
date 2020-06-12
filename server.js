@@ -16,7 +16,7 @@ var PORT = 9000;
 var app = express();
 
 // Make public a static folder
-app.use(express.static("public"))
+app.use(express.static("/public"))
 
 // Morgan to log requests
 app.use(logger("dev"));
@@ -32,7 +32,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-// deploy to herokue, or locally to mongo mongoESPN db
+// deploy to heroku, or locally to mongo mongoESPN db
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoESPN";
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI, function(error) {
@@ -40,7 +40,7 @@ mongoose.connect(MONGODB_URI, function(error) {
         console.log(error);
     }
     else {
-        console.log("mongoose connection is successfull");
+        console.log("mongoose connection is successful");
     }
 });
 
