@@ -1,4 +1,4 @@
-.container {
+.jumbotron-fluid {
     background-image: url("../images/nytimes.jpg");
-    background-position: center;
-}
+    background-size: cover;
+  }
