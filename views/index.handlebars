@@ -27,13 +27,18 @@
 </nav>
 
 
-  <div class="container">
-    <div class="jumbotron jumbotron-fluid text-center">
-      <h1 class="display-3">Mongo Scraper</h1>
-      <h4 class="lead">The New York Times</h4>
+
+    <div class="jumbotron text-center">
+      <div class="container">
+        <div class="background-image"></div>
+        <h1 class="display-3">Mongo Scraper</h1>
+        <h4 class="lead">The New York Times</h4>
+      </div>
     </div>
 
-    <div class="row">
+
+
+    <div class="container">
       <div class="col-lg-12" id="articles">
         {{#each articles}}
         <div class="card">
@@ -59,7 +64,7 @@
           </div>
         </div>
         <br>
-        {{/each}}
+        {{/each}}      
       </div>
     </div>
   </div>
