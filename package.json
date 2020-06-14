@@ -15,6 +15,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zsievers/MongoScraper/issues"
+  },
+  "homepage": "https://github.com/zsievers/MongoScraper#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
