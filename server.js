@@ -2,7 +2,7 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-
+var path = require("path");
 // Require all models
 var db = require("./models");
 
@@ -18,8 +18,9 @@ app.use(logger("dev"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Make public a static folder
-app.use(express.static("public"));
+app.use(express.static(__dirname + "public"));
 
 // Handlebars
 app.engine(
@@ -34,14 +35,12 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-// app.use(routes);
 
 // Connect to the Mongo DB
-
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news-scraper";
+var db = process.env.MONGODB_URI || "mongodb://localhost/news-scraper";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(db, { useNewUrlParser: true });
 // start server
 app.listen(PORT, function() {
     console.log("App running on port %s. Visit http://localhost:%s/ in your browser", PORT, PORT);
